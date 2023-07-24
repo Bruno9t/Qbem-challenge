@@ -1,2 +1,2 @@
 # Qbem-challenge
-A challenge develop by Qbem
+This is a challenge by Coodesh
