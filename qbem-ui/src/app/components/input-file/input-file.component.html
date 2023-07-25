@@ -1,0 +1,29 @@
+<input type="file"
+[accept]="requiredFileType"
+class="file-input"
+(change)="onFileSelected($event)" #fileUpload>
+
+<div class="file-upload">
+<div class="button-upload">
+  <button mat-fab color="primary" class="upload-btn"
+  (click)="fileUpload.click()">
+    <mat-icon>attach_file</mat-icon>
+</button>
+<span   (click)="fileUpload.click()">Anexar arquivo</span>
+</div>
+    <div class="file-name">
+      <span>{{fileName || "No file uploaded yet."}}</span>
+    </div>
+</div>
+
+<!-- <div class="progress">
+
+  <mat-progress-bar class="progress-bar" mode="determinate"
+                    [value]="uploadProgress" *ngIf="uploadProgress">
+
+  </mat-progress-bar>
+
+  <mat-icon class="cancel-upload" (click)="cancelUpload()" 
+            *ngIf="uploadProgress">delete_forever</mat-icon>
+
+</div> -->
