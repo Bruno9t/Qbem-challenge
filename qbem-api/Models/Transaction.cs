@@ -1,5 +1,8 @@
-﻿namespace qbem_api.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace qbem_api.Models
 {
+    [Table("transactions")]
     public class Transaction
     {
         public int Type { get; set; }

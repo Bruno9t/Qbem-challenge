@@ -1,0 +1,35 @@
+version: '1'
+services:
+
+  qbem-postgres:
+    image: "postgres:15.3-alpine"
+    container_name: qbem-postgres
+    restart: always
+    volumes:
+      - qbem-data:/var/lib/postgresql/data
+    ports:
+      - 5441:5432
+    env_file:
+      - .env
+
+  qbem-api:
+    build: ./qbem-api
+    container_name: qbem-api
+    environment:
+      - DB_SERVER=qbem-postgres
+    ports:
+      - 8080:8080
+    links:
+      - qbem-postgres
+
+  qbem-ui:
+    build: ./qbem-ui
+    container_name: qbem-ui
+    ports:
+      - 4200:4200
+    links:
+      - qbem-api
+
+
+volumes:
+  qbem-data:
