@@ -28,6 +28,7 @@ export class InputFileComponent {
             const formData = new FormData();
 
             formData.append("file", file);
+            console.log(file)
 
             const uploadFile = this.http.post("/api/thumbnail-upload", formData, {
                 reportProgress: true,

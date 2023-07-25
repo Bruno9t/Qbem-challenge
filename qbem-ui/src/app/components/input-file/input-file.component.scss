@@ -12,13 +12,20 @@ div.file-upload{
 div.button-upload{
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 
     span{
         margin-left: 10px;
         font-size: 25px;
     }
 }
+
+// .file-name {
+//     border-bottom: 2px solid white;
+//     padding: 10px 0 10px 0;
+//     width: fit-content;
+//     min-width: 200px;
+// }
 
 
 .example-spacer {
