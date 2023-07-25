@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "nSGIyf6m4SwWKkGolud9lUSlRsGkv37U1olImMCjnCA=",
+  "Source": "qbem-api",
+  "BasePath": "_content/qbem-api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
