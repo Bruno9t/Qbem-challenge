@@ -28,31 +28,13 @@ export class InputFileComponent {
             const formData = new FormData();
 
             formData.append("file", file);
-            console.log(file)
 
-            const uploadFile = this.http.post("/api/thumbnail-upload", formData, {
+            this.http.post("https://localhost:32774/uploadFile", formData, {
                 reportProgress: true,
                 observe: 'events'
             })
-            // .pipe(
-            //     finalize(() => this.reset())
-            // );
-
-            // this.uploadSub = upload$.subscribe(event => {
-            //     if (event.type == HttpEventType.UploadProgress) {
-            //       this.uploadProgress = Math.round(100 * (event.total == undefined ? 0 :(event.loaded / event.total)));
-            //     }
-            //   })
+            .subscribe()
         }
     }
 
-    // cancelUpload() {
-    //     this.uploadSub.unsubscribe();
-    //     this.reset();
-    //   }
-    
-    //   reset() {
-    //     this.uploadProgress = 0;
-    //     this.uploadSub = null;
-    //   }
 }
