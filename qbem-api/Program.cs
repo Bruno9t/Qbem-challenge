@@ -1,6 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using qbem_api.Contexts;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+string psqlConnection = builder.Configuration.GetConnectionString("WebApiDatabase");
+
+builder.Services.AddDbContextPool<TransactionContext>(options =>
+                                options.UseNpgsql(psqlConnection));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
